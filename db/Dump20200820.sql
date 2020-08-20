@@ -88,7 +88,7 @@ CREATE TABLE `pengajuans` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `pengajuans` (
 
 LOCK TABLES `pengajuans` WRITE;
 /*!40000 ALTER TABLE `pengajuans` DISABLE KEYS */;
-INSERT INTO `pengajuans` VALUES (1,'Aeki','Petani','< 600.000','Cukup Layak','Lengkap','2020-07-26 13:05:57','2020-07-26 13:05:57'),(2,'Baeki','Buruh','600.000 - 1.800.000','Tidak Layak','Piatu','2020-07-26 13:06:22','2020-07-26 13:06:22'),(3,'Caeki','Wiraswasta','1.800.000 - 2.400.000','Cukup Layak','Yatim','2020-07-26 13:06:56','2020-07-26 13:06:56'),(4,'Daeki','PNS','> 2.400.000','Sangat Layak','Yatim Piatu','2020-07-26 13:07:13','2020-07-26 15:25:13'),(11,'Eki','Wiraswasta','600.000 - 1.800.000','Cukup Layak','Lengkap','2020-08-09 06:42:42','2020-08-09 06:42:42');
+INSERT INTO `pengajuans` VALUES (20,'Rahmat','Petani','< 600.000','Cukup Layak','Lengkap','2020-08-20 06:27:58','2020-08-20 06:27:58'),(21,'Diki','Buruh','600.000 - 1.800.000','Tidak Layak','Piatu','2020-08-20 06:28:22','2020-08-20 06:28:22'),(22,'Budi','Wiraswasta','1.800.000 - 2.400.000','Cukup Layak','Yatim','2020-08-20 06:29:25','2020-08-20 06:29:25'),(23,'Ilham','PNS','> 2.400.000','Sangat Layak','Yatim Piatu','2020-08-20 06:29:51','2020-08-20 06:29:51'),(24,'Joko','Wiraswasta','600.000 - 1.800.000','Cukup Layak','Lengkap','2020-08-20 06:30:55','2020-08-20 06:30:55');
 /*!40000 ALTER TABLE `pengajuans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `penghasilans` (
 
 LOCK TABLES `penghasilans` WRITE;
 /*!40000 ALTER TABLE `penghasilans` DISABLE KEYS */;
-INSERT INTO `penghasilans` VALUES (1,'< 600.000',4,'2020-07-25 15:54:43','2020-07-25 15:54:43'),(2,'600.000 - 1.800.000',3,'2020-07-25 15:54:54','2020-07-25 15:54:54'),(3,'1.800.001 - 2.400.000',2,'2020-07-25 15:55:05','2020-07-25 15:55:05'),(4,'> 2.400.000',1,'2020-07-25 15:55:14','2020-07-25 15:55:14');
+INSERT INTO `penghasilans` VALUES (1,'< 600.000',4,'2020-07-25 15:54:43','2020-07-25 15:54:43'),(2,'600.000 - 1.800.000',3,'2020-07-25 15:54:54','2020-07-25 15:54:54'),(3,'1.800.000 - 2.400.000',2,'2020-07-25 15:55:05','2020-07-25 15:55:05'),(4,'> 2.400.000',1,'2020-07-25 15:55:14','2020-07-25 15:55:14');
 /*!40000 ALTER TABLE `penghasilans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-14 14:53:51
+-- Dump completed on 2020-08-20 13:49:15
