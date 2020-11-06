@@ -1,5 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
     const Pengajuan = sequelize.define('pengajuan', {
+        nisn: {
+            type: Sequelize.STRING(45)
+        },
+        kelas: {
+            type: Sequelize.STRING(45)
+        },
         alternatif: {
             type: Sequelize.STRING(45)
         },
