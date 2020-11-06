@@ -12,6 +12,8 @@ exports.create = (req, res) => {
     }
 
     const body = {
+        nisn: req.body.nisn,
+        nama: req.body.nama,
         alternatif: req.body.alternatif,
         pekerjaan: req.body.pekerjaan,
         penghasilan: req.body.penghasilan,
