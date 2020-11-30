@@ -45,6 +45,33 @@ INSERT INTO `alternatifs` VALUES (1,'Petani','< 600.000','Cukup Rumah','Lengkap'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `jurusans`
+--
+
+DROP TABLE IF EXISTS `jurusans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `jurusans` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nama` varchar(100) DEFAULT NULL,
+  `alias` varchar(45) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jurusans`
+--
+
+LOCK TABLES `jurusans` WRITE;
+/*!40000 ALTER TABLE `jurusans` DISABLE KEYS */;
+INSERT INTO `jurusans` VALUES (1,'Desain Permodelan dan Informasi Bangunan','DPIB','2020-11-30 13:41:32','2020-11-30 13:41:32'),(2,'Teknik Kendaraan Ringan Otomotif','TKRO','2020-11-30 13:44:33','2020-11-30 13:44:33'),(3,'Teknik dan Bisnis Sepeda Motor','TBSM','2020-11-30 13:44:33','2020-11-30 13:44:33'),(4,'Teknik Komputer dan Jaringan','TKJ','2020-11-30 13:44:33','2020-11-30 13:44:33'),(5,'Perbankan dan Keuangan Mikro','PKM','2020-11-30 13:44:33','2020-11-30 13:44:33'),(6,'Teknik Otomasi Industri','TOI','2020-11-30 13:44:33','2020-11-30 13:44:33');
+/*!40000 ALTER TABLE `jurusans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pekerjaans`
 --
 
@@ -87,8 +114,12 @@ CREATE TABLE `pengajuans` (
   `status_siswa` varchar(45) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
+  `kelas` varchar(45) DEFAULT NULL,
+  `nisn` varchar(45) DEFAULT NULL,
+  `jurusan` varchar(100) DEFAULT NULL,
+  `jenis_bantuan` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +128,7 @@ CREATE TABLE `pengajuans` (
 
 LOCK TABLES `pengajuans` WRITE;
 /*!40000 ALTER TABLE `pengajuans` DISABLE KEYS */;
-INSERT INTO `pengajuans` VALUES (20,'Rahmat','Petani','< 600.000','Cukup Layak','Lengkap','2020-08-20 06:27:58','2020-08-20 06:27:58'),(21,'Diki','Buruh','600.000 - 1.800.000','Tidak Layak','Piatu','2020-08-20 06:28:22','2020-08-20 06:28:22'),(22,'Budi','Wiraswasta','1.800.000 - 2.400.000','Cukup Layak','Yatim','2020-08-20 06:29:25','2020-08-20 06:29:25'),(23,'Ilham','PNS','> 2.400.000','Sangat Layak','Yatim Piatu','2020-08-20 06:29:51','2020-08-20 06:29:51'),(24,'Joko','Wiraswasta','600.000 - 1.800.000','Cukup Layak','Lengkap','2020-08-20 06:30:55','2020-08-20 06:30:55');
+INSERT INTO `pengajuans` VALUES (20,'Rahmat','Petani','< 600.000','Cukup Layak','Lengkap','2020-08-20 06:27:58','2020-11-30 12:19:31','XI','123','Teknik Kendaraan Ringan Otomotif','Kartu Indonesia Pintar (KIP)'),(21,'Diki','Buruh','600.000 - 1.800.000','Tidak Layak','Piatu','2020-08-20 06:28:22','2020-11-30 12:22:52','XI','456','TBSM','Surat Keterangan Tidak Mampu (SKTM)'),(22,'Budi','Wiraswasta','1.800.000 - 2.400.000','Cukup Layak','Yatim','2020-08-20 06:29:25','2020-11-30 14:42:29','XI','789','TKJ','Kartu Keluarga Sejahtera'),(23,'Ilham','PNS','> 2.400.000','Sangat Layak','Yatim Piatu','2020-08-20 06:29:51','2020-11-30 14:44:19','X','012','TOI','Surat Keterangan Tidak Mampu (SKTM)'),(24,'Joko','Wiraswasta','600.000 - 1.800.000','Cukup Layak','Lengkap','2020-08-20 06:30:55','2020-11-30 14:42:52','XII','345','TBSM','Tidak Ada');
 /*!40000 ALTER TABLE `pengajuans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,6 +160,32 @@ INSERT INTO `penghasilans` VALUES (1,'< 600.000',4,'2020-07-25 15:54:43','2020-0
 UNLOCK TABLES;
 
 --
+-- Table structure for table `preferenses`
+--
+
+DROP TABLE IF EXISTS `preferenses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `preferenses` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kategori` varchar(45) DEFAULT NULL,
+  `nilai` int DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `preferenses`
+--
+
+LOCK TABLES `preferenses` WRITE;
+/*!40000 ALTER TABLE `preferenses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `preferenses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `preferensis`
 --
 
@@ -151,8 +208,35 @@ CREATE TABLE `preferensis` (
 
 LOCK TABLES `preferensis` WRITE;
 /*!40000 ALTER TABLE `preferensis` DISABLE KEYS */;
-INSERT INTO `preferensis` VALUES (1,'Sangat Tinggi',5,'2020-07-25 16:08:41','2020-07-25 16:08:41'),(2,'Tinggi',4,'2020-07-25 16:08:49','2020-07-25 16:08:49'),(3,'Cukup',3,'2020-07-25 16:08:58','2020-07-25 16:08:58'),(4,'Rendah',2,'2020-07-25 16:09:06','2020-07-25 16:09:06'),(5,'Sangat Rendah',1,'2020-07-25 16:09:12','2020-07-25 16:09:12');
+INSERT INTO `preferensis` VALUES (2,'Tinggi',4,'2020-07-25 16:08:49','2020-07-25 16:08:49'),(3,'Cukup',3,'2020-07-25 16:08:58','2020-07-25 16:08:58'),(4,'Rendah',2,'2020-07-25 16:09:06','2020-07-25 16:09:06'),(5,'Sangat Rendah',1,'2020-07-25 16:09:12','2020-07-25 16:09:12');
 /*!40000 ALTER TABLE `preferensis` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `program_bantuans`
+--
+
+DROP TABLE IF EXISTS `program_bantuans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `program_bantuans` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sub_kriteria` varchar(100) DEFAULT NULL,
+  `bobot` varchar(45) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `program_bantuans`
+--
+
+LOCK TABLES `program_bantuans` WRITE;
+/*!40000 ALTER TABLE `program_bantuans` DISABLE KEYS */;
+INSERT INTO `program_bantuans` VALUES (1,'Kartu Indonesia Pintar (KIP)','4','2020-11-30 18:46:08','2020-11-30 18:46:08'),(2,'Kartu Keluarga Sejahtera','3','2020-11-30 18:46:08','2020-11-30 18:46:08'),(3,'Surat Keterangan Tidak Mampu (SKTM)','2','2020-11-30 18:46:08','2020-11-30 18:46:08'),(4,'Tidak Ada','1','2020-11-30 18:46:08','2020-11-30 18:46:08');
+/*!40000 ALTER TABLE `program_bantuans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -218,4 +302,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-20 13:49:15
+-- Dump completed on 2020-11-30 22:35:42
